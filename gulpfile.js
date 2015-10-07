@@ -36,7 +36,7 @@ gulp.task('js-min', function(){
 
 gulp.task('minify-css', function() {
   return gulp.src('css/*.css')
-    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(minifyCss({keepBreaks:false}))
     .pipe(gulp.dest('build/css'));
 });
 
