@@ -1,6 +1,6 @@
 {
   "name": "project-03",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "jeremy project 3",
   "main": "OLDgulpfile.js",
   "dependencies": {
@@ -26,5 +26,9 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/jeremy21212121/proj-03/issues"
-  }
+  },
+  "keywords": [
+    "project",
+    "3"
+  ]
 }

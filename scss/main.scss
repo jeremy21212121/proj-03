@@ -1,5 +1,7 @@
-html {
+@import 'reset';
 
+html {
+font: 99%;
 }
 body {
 background-color: white;
@@ -18,11 +20,12 @@ input {
 }
 .banner {
   width: 100%;
-}
-.banner img {
-  display: block;
-  width: 50%;
-  margin: 5% auto;
+
+  img {
+    display: block;
+    width: 50%;
+    margin: 5% auto;
+  }
 }
 .searchbox {
   width: 100%;
@@ -30,13 +33,14 @@ input {
   background-image: url('../images/pattern.png');
   background-repeat: repeat;
   background-size: contain;
+  img {
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+    padding-top: 6%;
+  }
 }
-.searchbox img {
-  display: block;
-  width: 25%;
-  margin: 0 auto;
-  padding-top: 6%;
-}
+
 .fa-search {
   display: inline;
 }
