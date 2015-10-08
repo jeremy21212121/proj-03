@@ -1,15 +1,16 @@
-var gulp = require('gulp'),
-    gp_concat = require('gulp-concat'),
-    gp_rename = require('gulp-rename'),
-    gp_uglify = require('gulp-uglify'),
-    minifyCss = require('gulp-minify-css');
+'use strict';
+
+var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
-var connect= require('gulp-connect');
-
-gulp.task('connect', function() {
-	connect.server();
-
+var sass = require('gulp-sass');
+ 
+gulp.task('sass', function () {
+  gulp.src('./scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
 });
+ 
+
 
 
 gulp.task('browser-sync', function() {
@@ -19,31 +20,10 @@ gulp.task('browser-sync', function() {
             baseDir: "./"
         }
     });
-gulp.watch(["index.html","css/*.css","js/*.js"]).on('change', browserSync.reload);
+gulp.watch('./scss/**/*.scss', ['sass']);
+gulp.watch(["*.html","css/*.css","js/*.js"]).on('change', browserSync.reload);
 });
 
-
-
-
-gulp.task('js-min', function(){
-    return gulp.src(['js/*.js'])
-        .pipe(gp_concat('main.js'))
-        .pipe(gulp.dest('js/main'))
-        .pipe(gp_rename('main.min.js'))
-        .pipe(gp_uglify())
-        .pipe(gulp.dest('build/js'));
-});
-
-gulp.task('minify-css', function() {
-  return gulp.src('css/*.css')
-    .pipe(minifyCss({keepBreaks:false}))
-    .pipe(gulp.dest('build/css'));
-});
-
-gulp.task('watch', function() {
-	gulp.watch('js/*.js', ['js-min']);
-	gulp.watch('css/*.css', ['minify-css']);
-});
 
 gulp.task('default', function(){
 	console.log('~-_-+=* Specify a gulp task (type \'gulp TASKNAME\' ) *=+-_-~');
