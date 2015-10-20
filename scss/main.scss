@@ -1,5 +1,33 @@
+$btnclr: #e24420;
+$grdbrdr: 1px solid #c2c2c2;
+$flxitmbrdr: 1px solid #dbdbdb;
+$fntsz: 12px;
+$fntclr: #2e2e2e;
+
 @import 'reset';
 
+@mixin flexcontainer {display: flex;}
+
+// button {background-color: $btnclr;}
+
+.flexcontainer {
+  @include flexcontainer;
+  border: $grdbrdr;
+  height: 1000vw;
+  min-width: 640px;
+  margin: 3%;
+}
+.flexitem {
+  flex: 1;
+  border: $flxitmbrdr;
+  height: auto;
+  min-width: 640px;
+  margin: 2%;
+
+
+
+
+}
 html {
 font: 99%;
 }
@@ -8,15 +36,33 @@ background-color: white;
 }
 input {
   margin: 0 auto;
-
-  display: block;
+  // position: absolute;
+  // display: inline-block;
   margin-top: 8%;
+  // margin-left: 18%;
   line-height: 2.0;
 
-  background-image: url('../images/search.svg');
-  background-size:contain;
-  background-repeat: no-repeat;
-  background-position: right;
+  // background-image: url('../images/search.svg');
+  // background-size:contain;
+  // background-repeat: no-repeat;
+  // background-position: right;
+}
+li {
+  list-style-type: none;
+}
+button#button {
+  // display: block;
+  // margin-left: -50px;
+  position: absolute;
+  // right: 50px;
+  // z-index: 55;
+  border: none;
+  background-color: rgba(255,255,255,0.1)
+}
+button#button::after {
+    color: #c2c2c2;
+    content: '\f002';
+    font-family: FontAwesome;
 }
 .banner {
   width: 100%;
@@ -43,4 +89,11 @@ input {
 
 .fa-search {
   display: inline;
+}
+
+#input-center {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
 }

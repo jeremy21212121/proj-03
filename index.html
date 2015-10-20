@@ -5,7 +5,6 @@
 		<title>Instagrid</title>
 		<meta name="description" content="Search Instagram by Hashtag">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/main.css">
 	</head>
@@ -16,18 +15,30 @@
 			</div>
 			<div class="searchbox">
 				<img src="images/instagrid-icon.svg" alt="Instagrid Camera Icon">
-				<form>
-					<input type="text" placeholder="Enter your search..." size="28"/>
 
-				</form>
+					<form>
+					 <div id="input-center">
+						<input type="text" id="search" placeholder="Enter your search..." size="28">
+						</input>
+
+						<button type="submit" id="button"></button>
+					</div>
+					</form>
+
+
 			</div>
 
 		</header>
+		<section class="flexcontainer">
+			<div class="flexitem" id="initialitem">
+				<img class ="default" src="images/search-tags.svg"/>
+			</div>
+		</section>
 
 		<footer>
 		</footer>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="js/main.min.js"></script>
+		<script src="js/main/main.js"></script>
 	</body>
 </html>
