@@ -17,7 +17,7 @@
 				<img src="images/instagrid-icon.svg" alt="Instagrid Camera Icon">
 
 					<form>
-					 <div id="input-center">
+					 <div id="inputcenter">
 						<input type="text" id="search" placeholder="Enter your search..." size="28">
 						</input>
 
@@ -29,11 +29,17 @@
 			</div>
 
 		</header>
-		<section class="flexcontainer">
-			<div class="flexitem" id="initialitem">
-				<img class ="default" src="images/search-tags.svg"/>
-			</div>
-		</section>
+		<div class="loading">
+			<i class="fa fa-cog fa-spin fa-2x"></i>
+		</div>
+
+		<ul class="flexcontainer">
+		 		<li id="initialitem">
+							<div class="flexitem" >
+								<img class ="default" src="images/search-tags.svg">
+							</div>
+				</li>
+		</ul>
 
 		<footer>
 		</footer>

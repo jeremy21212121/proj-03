@@ -45,40 +45,81 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.flexcontainer {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px solid #c2c2c2;
-  height: 1000vw;
-  min-width: 640px;
-  margin: 3%; }
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/opensans-lightitalic-webfont.eot");
+  src: url("../fonts/opensans-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-lightitalic-webfont.woff2") format("woff2"), url("../fonts/opensans-lightitalic-webfont.woff") format("woff"), url("../fonts/opensans-lightitalic-webfont.ttf") format("truetype"), url("../fonts/opensans-lightitalic-webfont.svg#open_sanslight_italic") format("svg");
+  font-weight: normal;
+  font-style: italic; }
 
-.flexitem {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  border: 1px solid #dbdbdb;
-  height: auto;
-  min-width: 640px;
-  margin: 2%; }
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/opensans-light-webfont.eot");
+  src: url("../fonts/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-light-webfont.woff2") format("woff2"), url("../fonts/opensans-light-webfont.woff") format("woff"), url("../fonts/opensans-light-webfont.ttf") format("truetype"), url("../fonts/opensans-light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/opensans-bolditalic-webfont.eot");
+  src: url("../fonts/opensans-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-bolditalic-webfont.woff2") format("woff2"), url("../fonts/opensans-bolditalic-webfont.woff") format("woff"), url("../fonts/opensans-bolditalic-webfont.ttf") format("truetype"), url("../fonts/opensans-bolditalic-webfont.svg#open_sansbold_italic") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/opensans-bold-webfont.eot");
+  src: url("../fonts/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-bold-webfont.woff2") format("woff2"), url("../fonts/opensans-bold-webfont.woff") format("woff"), url("../fonts/opensans-bold-webfont.ttf") format("truetype"), url("../fonts/opensans-bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
 
 html {
-  font: 99%; }
+  font-family: 'OpenSans', sans; }
+
+.flexcontainer {
+  border: 1px solid #c2c2c2;
+  height: auto;
+  max-width: 650px;
+  margin: 1%; }
+
+.flexitem {
+  border: 1px solid #dbdbdb;
+  max-height: 900px;
+  max-width: 640px;
+  margin: 0 auto; }
+  .flexitem img.mainpicture {
+    margin: 1%;
+    margin-bottom: 3%;
+    width: 98%; }
+  .flexitem img.profile-picture {
+    border-radius: 50%;
+    margin-left: 20px; }
 
 body {
   background-color: white; }
+  body div.loading {
+    display: none;
+    width: 100%; }
+    body div.loading i {
+      display: inline-block;
+      margin: 0 45vw; }
 
-input {
-  margin: 0 auto;
-  margin-top: 8%;
-  line-height: 2.0; }
+input#search {
+  margin: 0 30%;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  bottom: 3px; }
 
 li {
   list-style-type: none; }
 
 button#button {
   position: absolute;
+  right: 30%;
   border: none;
   background-color: rgba(255, 255, 255, 0.1); }
 
@@ -102,15 +143,37 @@ button#button::after {
   background-size: contain; }
   .searchbox img {
     display: block;
-    width: 25%;
+    width: 15%;
     margin: 0 auto;
-    padding-top: 6%; }
+    padding-top: 12%;
+    padding-bottom: 6%; }
 
 .fa-search {
   display: inline; }
 
-#input-center {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  width: 50%; }
+#inputcenter {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+
+.default {
+  width: 100%; }
+
+div.userwrap {
+  line-height: 0; }
+  div.userwrap p {
+    display: inline; }
+  div.userwrap span {
+    width: 95%;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    bottom: 90px; }
+  div.userwrap span.username {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2e2e2e; }
+  div.userwrap span.social {
+    margin-top: 10px;
+    font-weight: bold; }

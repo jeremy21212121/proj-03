@@ -5,47 +5,58 @@ $fntsz: 12px;
 $fntclr: #2e2e2e;
 
 @import 'reset';
+@import 'fonts';
 
-@mixin flexcontainer {display: flex;}
+html {
+  font-family: 'OpenSans', sans;
+}
 
-// button {background-color: $btnclr;}
 
 .flexcontainer {
-  @include flexcontainer;
+  // @include flexcontainer;
   border: $grdbrdr;
-  height: 1000vw;
-  min-width: 640px;
-  margin: 3%;
+  height: auto;
+  max-width: 650px;
+  margin: 1%;
+
 }
 .flexitem {
-  flex: 1;
+  // flex: 1;
   border: $flxitmbrdr;
-  height: auto;
-  min-width: 640px;
-  margin: 2%;
-
-
-
-
-}
-html {
-font: 99%;
-}
-body {
-background-color: white;
-}
-input {
+  max-height: 900px;
+  max-width: 640px;
   margin: 0 auto;
-  // position: absolute;
-  // display: inline-block;
-  margin-top: 8%;
-  // margin-left: 18%;
-  line-height: 2.0;
 
-  // background-image: url('../images/search.svg');
-  // background-size:contain;
-  // background-repeat: no-repeat;
-  // background-position: right;
+  img.mainpicture {
+    margin: 1%;
+    margin-bottom: 3%;
+    width: 98%;
+  }
+  img.profile-picture {
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+}
+
+body {
+  background-color: white;
+  div.loading {
+    display: none;
+    width: 100%;
+    i {
+      display:inline-block;
+      margin: 0 45vw;
+    }
+  }
+}
+input#search {
+  margin: 0 30%;
+  flex: 1;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  bottom: 3px;
+
 }
 li {
   list-style-type: none;
@@ -54,7 +65,8 @@ button#button {
   // display: block;
   // margin-left: -50px;
   position: absolute;
-  // right: 50px;
+  right: 30%;
+
   // z-index: 55;
   border: none;
   background-color: rgba(255,255,255,0.1)
@@ -63,6 +75,7 @@ button#button::after {
     color: #c2c2c2;
     content: '\f002';
     font-family: FontAwesome;
+    // z-index: 99999;
 }
 .banner {
   width: 100%;
@@ -81,9 +94,10 @@ button#button::after {
   background-size: contain;
   img {
     display: block;
-    width: 25%;
+    width: 15%;
     margin: 0 auto;
-    padding-top: 6%;
+    padding-top: 12%;
+    padding-bottom: 6%;
   }
 }
 
@@ -91,9 +105,37 @@ button#button::after {
   display: inline;
 }
 
-#input-center {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  width: 50%;
+#inputcenter {
+  display: flex;
+  // position: relative;
+  // margin: 0 auto;
+  width: 100%;
+}
+
+.default {
+  width: 100%;
+}
+
+div.userwrap{
+  line-height: 0;
+  p {
+    display: inline;
+  }
+  span {
+    width: 95%;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    bottom: 90px;
+
+  }
+  span.username {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $fntclr;
+      }
+  span.social {
+    margin-top: 10px;
+    font-weight: bold;
+  }
 }
