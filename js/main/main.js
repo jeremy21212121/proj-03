@@ -53,4 +53,5 @@ $('button#button').on('click', function(event) {
 $('div.loading').fadeOut('fast');
 $('ul.flexcontainer').fadeIn('slow');
  });
+
  });
