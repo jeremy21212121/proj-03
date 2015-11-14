@@ -3,6 +3,8 @@ $grdbrdr: 1px solid #c2c2c2;
 $flxitmbrdr: 1px solid #dbdbdb;
 $fntsz: 12px;
 $fntclr: #2e2e2e;
+$tablet: 768px;
+$desktop: 1025px;
 
 @import 'reset';
 @import 'fonts';
@@ -13,15 +15,30 @@ html {
 
 
 .flexcontainer {
-  // @include flexcontainer;
+  li#initialitem{
+    display: block;
+    margin: 0 auto;
+  }
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   border: $grdbrdr;
   height: auto;
-  max-width: 650px;
-  margin: 1%;
+  max-width: 500px;
+  margin: 1% auto;
+  @media only screen and (min-width : #{$tablet}) {
+    max-width: 99%;
+    // width: 100%;
 
+    padding-top: 15px;
+            }
 }
 .flexitem {
-  // flex: 1;
+  @media only screen and (min-width : #{$tablet}) {
+    max-width: 240px;
+    margin: 0 auto;
+    // flex: 1;
+  }
   border: $flxitmbrdr;
   max-height: 900px;
   max-width: 640px;
@@ -33,24 +50,34 @@ html {
     width: 98%;
   }
   img.profile-picture {
+    @media only screen and (min-width : #{$tablet}) {
+      margin-left: 10px;
+      max-width: 100px;
+    }
     border-radius: 50%;
     margin-left: 20px;
   }
 }
 
 body {
+  min-width: 360px;
   background-color: white;
   div.loading {
     display: none;
     width: 100%;
+    p {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 100px;
+    }
     i {
       display:inline-block;
-      margin: 0 45vw;
+      margin: 100px 45vw 0 45vw;
     }
   }
 }
 input#search {
-  margin: 0 30%;
+  margin: 0;
   flex: 1;
   font-size: 1rem;
   display: inline-block;
@@ -59,17 +86,18 @@ input#search {
 
 }
 li {
+  // display:inline-block;
+  margin: 1%;
+  margin-bottom: 15px;
   list-style-type: none;
 }
 button#button {
-  // display: block;
-  // margin-left: -50px;
-  position: absolute;
-  right: 30%;
-
+  position: relative;
+  right: 30px;
+  bottom: 4px;
   // z-index: 55;
   border: none;
-  background-color: rgba(255,255,255,0.1)
+  background-color: rgba(255,255,255,0.0)
 }
 button#button::after {
     color: #c2c2c2;
@@ -81,6 +109,12 @@ button#button::after {
   width: 100%;
 
   img {
+    @media only screen and (min-width : #{$tablet}) {
+      margin: 3% auto;
+    }
+    @media only screen and (min-width : #{$tablet}) {
+      margin: 2% auto;
+    }
     display: block;
     width: 50%;
     margin: 5% auto;
@@ -89,10 +123,19 @@ button#button::after {
 .searchbox {
   width: 100%;
   height: 50vw;
+  min-height: 210px;
+  max-height: 300px;
   background-image: url('../images/pattern.png');
   background-repeat: repeat;
   background-size: contain;
   img {
+    @media only screen and (min-width : #{$tablet}) {
+      padding-top: 6%;
+    }
+    @media only screen and (min-width : #{$desktop}) {
+      padding-top: 4%;
+      padding-bottom: 4%;
+    }
     display: block;
     width: 15%;
     margin: 0 auto;
@@ -107,9 +150,9 @@ button#button::after {
 
 #inputcenter {
   display: flex;
-  // position: relative;
-  // margin: 0 auto;
-  width: 100%;
+  margin: 0 auto;
+  width: 65%;
+  max-width: 470px;
 }
 
 .default {
@@ -127,6 +170,9 @@ div.userwrap{
     text-align: right;
     position: relative;
     bottom: 90px;
+    @media only screen and (min-width : #{$tablet}) {
+      bottom: 60px;
+    }
 
   }
   span.username {
@@ -134,8 +180,18 @@ div.userwrap{
         font-weight: bold;
         color: $fntclr;
       }
+  span.lg-name {font-size: 1.6rem;}
+  span.xl-name{font-size: 1.3rem;}
+  span.xxl-name{font-size: 1.1rem;}
+  span.xxxl-name{font-size: 0.9rem;}
   span.social {
     margin-top: 10px;
     font-weight: bold;
+  }
+}
+
+div.magic {
+  @media only screen and (min-width : #{$tablet}) {
+    margin: 0.5%;
   }
 }
