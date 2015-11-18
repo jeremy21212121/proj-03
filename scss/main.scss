@@ -8,6 +8,7 @@ $desktop: 1025px;
 
 @import 'reset';
 @import 'fonts';
+@import 'featherlightmin';
 
 html {
   font-family: 'OpenSans', sans;
@@ -179,14 +180,23 @@ div.userwrap{
         font-size: 2rem;
         font-weight: bold;
         color: $fntclr;
+        a {
+          text-decoration: none;
+          color: $fntclr;
+        }
       }
   span.lg-name {font-size: 1.5rem;}
   span.xl-name{font-size: 1.1rem;}
   span.xxl-name{font-size: 0.9rem;}
   span.xxxl-name{font-size: 0.8rem;}
   span.social {
-    margin-top: 10px;
+    margin-top: 20px;
     font-weight: bold;
+    font-size: 1.6rem;
+    a {
+      text-decoration: none;
+      color: $fntclr;
+    }
   }
 }
 
