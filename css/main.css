@@ -168,7 +168,8 @@ html {
   margin: 1% auto; }
   .flexcontainer li#initialitem {
     display: block;
-    margin: 0 auto; }
+    margin: 10px auto;
+    padding-bottom: 10px; }
   @media only screen and (min-width: 768px) {
     .flexcontainer {
       max-width: 99%;
@@ -247,7 +248,8 @@ button#button::after {
         margin: 3% auto; } }
     @media only screen and (min-width: 768px) {
       .banner img {
-        margin: 2% auto; } }
+        margin: 2% 0 2% 5%;
+        width: 30%; } }
 
 .searchbox {
   width: 100%;
@@ -312,7 +314,7 @@ div.userwrap {
   div.userwrap span.xxl-name {
     font-size: 0.9rem; }
   div.userwrap span.xxxl-name {
-    font-size: 0.8rem; }
+    font-size: 0.7rem; }
   div.userwrap span.social {
     margin-top: 20px;
     font-weight: bold;
